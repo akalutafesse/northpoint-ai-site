@@ -29,14 +29,264 @@
 <meta name="twitter:description" content="North Point AI builds intelligent, secure, and scalable systems that power the future of Africa's digital infrastructure.">
 <meta name="twitter:image" content="https://www.northpoint-ai.com/assets/img/og-image.png">
 
-<link rel="stylesheet" href="assets/css/style.css">
+<style>
+:root{
+  --ink:#10142b;
+  --ink-2:#5c6072;
+  --paper:#ffffff;
+  --paper-2:#f5f6f9;
+  --navy:#0d1544;
+  --navy-soft:#28347c;
+  --night-ink:#f5f6f9;
+  --night-ink-2:#9aa2c4;
+  --radius:24px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;line-height:1.5;
+}
+::selection{background:var(--navy);color:#fff}
+img{max-width:100%}
+
+/* ---------- Nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  background:rgba(255,255,255,.78);
+  border-bottom:1px solid rgba(13,21,68,.08);
+}
+.nav-inner{
+  max-width:1120px;margin:0 auto;padding:0 24px;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+}
+.brand img{height:32px;width:auto;display:block}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;opacity:.8;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-cta{
+  background:var(--navy);color:#fff !important;opacity:1 !important;
+  padding:7px 16px;border-radius:980px;font-weight:500;
+}
+.nav-cta:hover{background:var(--navy-soft)}
+
+/* ---------- Mobile menu ---------- */
+.menu-btn{
+  display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;
+  position:relative;padding:0;-webkit-tap-highlight-color:transparent;
+}
+.menu-btn span{
+  display:block;width:20px;height:1.5px;background:var(--ink);
+  position:absolute;left:12px;transition:transform .3s var(--ease),opacity .3s var(--ease);
+}
+.menu-btn span:nth-child(1){top:16px}
+.menu-btn span:nth-child(2){top:22px}
+.menu-btn span:nth-child(3){top:28px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){top:22px;transform:rotate(-45deg)}
+
+.mobile-menu{
+  display:none;position:fixed;top:64px;left:0;right:0;z-index:99;
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid rgba(13,21,68,.08);
+  padding:8px 24px 16px;
+  transform:translateY(-10px);opacity:0;
+  transition:transform .3s var(--ease),opacity .3s var(--ease);
+  pointer-events:none;
+}
+.mobile-menu.open{transform:none;opacity:1;pointer-events:auto}
+.mobile-menu a{
+  display:block;padding:14px 0;color:var(--ink);text-decoration:none;
+  font-size:16px;font-weight:500;border-bottom:1px solid rgba(13,21,68,.06);
+}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--navy)}
+
+@media(max-width:760px){
+  .nav-links a:not(.nav-cta){display:none}
+  .menu-btn{display:flex;align-items:center;justify-content:center;order:-1;margin-right:auto}
+  .brand{order:0}
+  .nav-links{order:1}
+  .mobile-menu{display:block}
+}
+@media(prefers-reduced-motion:reduce){
+  .mobile-menu{transition:none}
+  .menu-btn span{transition:none}
+}
+
+/* ---------- Shared ---------- */
+section{padding:clamp(88px,12vw,140px) 24px}
+.wrap{max-width:1120px;margin:0 auto}
+.wrap-narrow{max-width:840px;margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--navy);margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--navy)}
+h1{font-size:clamp(40px,7vw,78px);line-height:1.03;letter-spacing:-.035em;font-weight:700;color:var(--navy)}
+h2{font-size:clamp(32px,5vw,56px);line-height:1.06;letter-spacing:-.03em;font-weight:700;color:var(--navy)}
+h3{font-size:21px;letter-spacing:-.015em;font-weight:600}
+.lede{font-size:clamp(18px,2.2vw,23px);line-height:1.45;color:var(--ink-2);letter-spacing:-.01em}
+.btn{
+  display:inline-block;text-decoration:none;font-size:16px;font-weight:500;
+  padding:14px 30px;border-radius:980px;transition:all .3s var(--ease);
+}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--navy-soft);transform:translateY(-1px)}
+.btn-ghost{color:var(--navy)}
+.btn-ghost:hover{text-decoration:underline}
+.alt{background:var(--paper-2)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .compass-mark{animation:none !important}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:92vh;display:flex;align-items:center;text-align:center;
+  padding-top:130px;position:relative;overflow:hidden;
+}
+.hero .wrap-narrow{position:relative;z-index:2}
+.meridians{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.55}
+.hero h1{margin:26px 0 24px}
+.hero .lede{max-width:660px;margin:0 auto 40px}
+.hero-ctas{display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap}
+.compass-mark{height:96px;width:auto !important;animation:settle 1.6s var(--ease) both}
+@keyframes settle{
+  0%{transform:rotate(-140deg);opacity:0}
+  100%{transform:rotate(0deg);opacity:1}
+}
+
+/* ---------- Gap / problem ---------- */
+.gap-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+@media(max-width:860px){.gap-grid{grid-template-columns:1fr}}
+.gap-points{display:flex;flex-direction:column;gap:28px}
+.gap-point h3{margin-bottom:6px}
+.gap-point p{color:var(--ink-2);font-size:17px}
+
+/* ---------- Pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:56px}
+.card{
+  background:var(--paper);border:1px solid rgba(13,21,68,.09);
+  border-radius:var(--radius);padding:36px 32px;
+  box-shadow:0 1px 2px rgba(13,21,68,.03);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,21,68,.12)}
+.card .glyph{
+  width:44px;height:44px;border-radius:12px;background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.card h3{margin-bottom:10px}
+.card p{color:var(--ink-2);font-size:16px}
+
+/* ---------- Portfolio ---------- */
+.port{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:56px}
+.port-card{
+  border-radius:var(--radius);padding:40px 36px;
+  border:1px solid rgba(13,21,68,.09);background:var(--paper);
+  display:flex;flex-direction:column;gap:12px;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  text-decoration:none;color:var(--ink);
+}
+.port-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,21,68,.12)}
+.port-tag{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
+.port-card h3{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;color:var(--navy)}
+.port-card p{color:var(--ink-2);font-size:16px}
+.port-card .go{margin-top:auto;padding-top:16px;color:var(--navy);font-weight:500;font-size:15px}
+.pipeline{
+  margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+@media(max-width:860px){.pipeline{grid-template-columns:1fr}}
+.pipe{
+  border-radius:18px;border:1px dashed rgba(13,21,68,.25);padding:26px 28px;background:transparent;
+}
+.pipe h3{font-size:17px;color:var(--navy)}
+.pipe .port-tag{font-weight:600}
+.pipe p{font-size:15px;color:var(--ink-2);margin-top:6px}
+
+/* ---------- Partnership ---------- */
+.partner-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;margin-top:56px}
+@media(max-width:860px){.partner-grid{grid-template-columns:1fr}}
+.partner-logos{
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:28px;
+}
+.partner-logos img.gs{height:52px;width:auto !important}
+.partner-logos img.np{height:38px;width:auto !important}
+.partner-logos .x{color:var(--ink-2);font-size:20px;font-weight:300}
+.partner-copy p{color:var(--ink-2);font-size:17px;margin-bottom:16px}
+.partner-copy strong{color:var(--ink)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{
+  border:1px solid rgba(13,21,68,.09);border-radius:18px;padding:26px 24px;background:var(--paper);
+}
+.stat b{display:block;font-size:clamp(30px,3.6vw,42px);letter-spacing:-.03em;color:var(--navy);font-weight:700;line-height:1.1}
+.stat span{font-size:14px;color:var(--ink-2)}
+.partner-link{margin-top:22px;display:inline-block}
+
+/* ---------- Use cases ---------- */
+.uses{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:56px}
+.use{border-radius:18px;border:1px solid rgba(13,21,68,.09);padding:26px 22px;background:var(--paper)}
+.use h3{font-size:17px;margin-bottom:6px;color:var(--navy)}
+.use p{font-size:14px;color:var(--ink-2)}
+
+/* ---------- AI for Good (the one dark section) ---------- */
+.night{background:var(--navy);color:var(--night-ink);position:relative;overflow:hidden}
+.night .wrap{position:relative;z-index:2}
+.night-mark{
+  position:absolute;right:-80px;bottom:-90px;height:460px;width:auto !important;opacity:.07;z-index:1;pointer-events:none;
+}
+.night .eyebrow{color:#aebcf5}
+.night .eyebrow::before{background:#aebcf5}
+.big-quote{
+  font-size:clamp(30px,4.6vw,52px);line-height:1.12;letter-spacing:-.025em;
+  font-weight:700;max-width:900px;color:#fff;
+}
+.big-quote em{font-style:normal;color:#aebcf5}
+.night .lede{color:var(--night-ink-2);margin-top:28px;max-width:760px}
+.night-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:48px}
+.night-item{border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:24px 22px}
+.night-item h3{font-size:16px;margin-bottom:6px;color:#fff}
+.night-item p{font-size:14px;color:var(--night-ink-2)}
+
+/* ---------- Contact ---------- */
+.contact{text-align:center}
+.contact h2{margin-bottom:18px}
+.contact .lede{max-width:620px;margin:0 auto 40px}
+.contact-lines{margin-top:44px;color:var(--ink-2);font-size:16px;display:flex;gap:10px 32px;justify-content:center;flex-wrap:wrap}
+.contact-lines a{color:var(--ink);text-decoration:none;font-weight:500}
+.contact-lines a:hover{color:var(--navy)}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid rgba(13,21,68,.08);padding:40px 24px;background:var(--paper-2)}
+.foot{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-2)}
+.foot img{height:26px;width:auto;display:block;margin-bottom:10px}
+.foot a{color:var(--ink-2);text-decoration:none;margin-left:20px}
+.foot a:hover{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:6px}
+</style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <a class="brand" href="#top" aria-label="North Point AI home">
-      <img src="assets/img/logo-full-navy.png" alt="North Point AI">
+      <img src="assets/img/logo-full-navy.webp" width="552" height="104" alt="North Point AI">
     </a>
     <div class="nav-links">
       <a href="#build">What we build</a>
@@ -47,7 +297,17 @@
       <a class="nav-cta" href="#contact">Contact us</a>
     </div>
   </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#build">What we build</a>
+    <a href="#work">Work</a>
+    <a href="#partnership">Partnership</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#good">AI for Good</a>
+    <a href="#contact">Contact us</a>
+  </div>
 </nav>
+
+<main>
 
 <!-- HERO -->
 <header class="hero" id="top">
@@ -62,7 +322,7 @@
     <circle cx="720" cy="120" r="3" fill="#0d1544" fill-opacity=".3"/>
   </svg>
   <div class="wrap-narrow">
-    <img class="compass-mark" src="assets/img/mark-navy.png" alt="" aria-hidden="true">
+    <img class="compass-mark" src="assets/img/mark-navy.webp" width="214" height="192" alt="" aria-hidden="true">
     <h1>Intelligent infrastructure,<br>built for Africa.</h1>
     <p class="lede">North Point AI builds intelligent, secure, and scalable systems that power the future of Africa's digital infrastructure — for governments, enterprises, and institutions that cannot afford to fail.</p>
     <div class="hero-ctas">
@@ -196,14 +456,14 @@
     <div class="partner-grid">
       <div class="partner-copy reveal">
         <div class="partner-logos">
-          <img class="np" src="assets/img/logo-full-navy.png" alt="North Point AI">
+          <img class="np" src="assets/img/logo-full-navy.webp" width="552" height="104" alt="North Point AI">
           <span class="x">&times;</span>
-          <img class="gs" src="assets/img/gratitude-logo.png" alt="Gratitude Systems">
+          <img class="gs" src="assets/img/gratitude-logo.webp" width="437" height="104" alt="Gratitude Systems">
         </div>
         <p>Our projects are delivered in close collaboration with <strong>Gratitude Systems</strong>, a Washington, DC&ndash;based technology firm with deep expertise in LLMs, secure architectures, and enterprise deployments &mdash; delivering practical AI for over seven years, long before &ldquo;AI&rdquo; became a buzzword.</p>
         <p>Gratitude Systems powers mission-critical work for U.S. government agencies and national carriers &mdash; from AI-driven automation for DC public services to network intelligence for AT&amp;T and Verizon, and enterprise RAG systems built on NVIDIA AI.</p>
         <p>Together, this partnership brings world-class frameworks into the environments where they matter most.</p>
-        <a class="btn btn-ghost partner-link" href="https://gratitudesystems.com" target="_blank" rel="noopener">Visit gratitudesystems.com &rarr;</a>
+        <a class="btn btn-ghost partner-link" href="https://gratitudesystems.com" target="_blank" rel="noopener" aria-label="Visit Gratitude Systems website">Visit gratitudesystems.com &rarr;</a>
       </div>
       <div class="stats reveal">
         <div class="stat"><b>70%</b><span>end-to-end automation achieved in DC child-support payment processing</span></div>
@@ -261,7 +521,7 @@
 
 <!-- AI FOR GOOD -->
 <section class="night" id="good">
-  <img class="night-mark" src="assets/img/mark-white.png" alt="" aria-hidden="true">
+  <img class="night-mark" src="assets/img/mark-white.webp" width="520" height="464" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="reveal">
       <span class="eyebrow">AI for Good</span>
@@ -292,10 +552,12 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="foot">
     <span>
-      <img src="assets/img/logo-full-navy.png" alt="North Point AI">
+      <img src="assets/img/logo-full-navy.webp" width="552" height="104" alt="North Point AI">
       &copy; 2026 North Point AI. Bole, Addis Ababa, Ethiopia.
     </span>
     <span>
@@ -308,6 +570,40 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+(function(){
+  const btn=document.querySelector('.menu-btn');
+  const menu=document.getElementById('mobile-menu');
+  if(!btn||!menu)return;
+
+  function close(){
+    btn.setAttribute('aria-expanded','false');
+    menu.classList.remove('open');
+  }
+  function toggle(){
+    const open=btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded',open?'false':'true');
+    menu.classList.toggle('open',!open);
+  }
+
+  btn.addEventListener('click',toggle);
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+  document.addEventListener('click',e=>{
+    if(menu.classList.contains('open')&&!menu.contains(e.target)&&!btn.contains(e.target))close();
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&menu.classList.contains('open'))close();
+  });
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(!ticking){ticking=true;requestAnimationFrame(()=>{if(menu.classList.contains('open'))close();ticking=false;})}
+  },{passive:true});
+})();
+</script>
 </body>
 </html>

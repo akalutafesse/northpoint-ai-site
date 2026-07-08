@@ -13,13 +13,13 @@ Static HTML/CSS/JS. No framework, no build step, no dependencies.
 
 ## Structure
 ```
-index.html              — single page, all sections
-assets/css/style.css    — extracted from prototype
-assets/js/main.js       — IntersectionObserver reveal animations
-assets/img/             — logos, marks, favicons, OG image
+index.html              — single page, all sections, CSS inlined in <style>, JS inlined in <script>
+assets/img/             — WebP logos, marks, favicons, OG image
 robots.txt, sitemap.xml — SEO
 .github/workflows/      — GitHub Pages deploy
 ```
+
+Note: CSS and JS are inlined in index.html (not external files) to eliminate render-blocking resources.
 
 ## Deploy
 - Staging: GitHub Pages (auto-deploy on push to main)
@@ -34,7 +34,7 @@ robots.txt, sitemap.xml — SEO
 - Paper-2: #f5f6f9 (alt sections)
 
 ## Rules
-1. Pixel-faithful to approved v4 prototype — no design changes without approval
+1. Pixel-faithful to approved v4 prototype — no design changes without approval (mobile menu is the one approved addition)
 2. All images self-hosted under assets/img/ — no external hotlinks
 3. No external dependencies — no CDN, no Google Fonts, no analytics scripts (yet)
 4. System font stack only — no custom font loading
@@ -42,6 +42,7 @@ robots.txt, sitemap.xml — SEO
 6. Keep total transfer under 500KB
 7. Lighthouse targets: >=95 all categories
 8. Push after every commit
+9. Images in WebP format with explicit width/height attributes
 
 ## DNS cutover records (prepared, NOT applied)
 When approved, add in Squarespace DNS:

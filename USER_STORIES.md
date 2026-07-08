@@ -17,8 +17,20 @@
 - [x] Create foundation docs (CLAUDE.md, SPEC.md, USER_STORIES.md, CHANGELOG.md)
 - [x] Deploy to GitHub Pages staging
 - [x] Verify: zero 404s, zero console errors, HTTPS
-- [x] Run Lighthouse, record scores
+- [x] Run Lighthouse, record scores (100/98/96/100)
 - [x] Prepare DNS cutover records (not applied)
+
+### Session 2 — Mobile Menu & Lighthouse Audit Fixes
+- [x] Mobile hamburger menu (Apple-style, frosted glass, accessible)
+- [x] Inline CSS into <style> block (eliminate render-blocking)
+- [x] Inline JS into <script> block (eliminate render-blocking)
+- [x] Convert images to WebP format
+- [x] Resize oversized images to 2× max rendered size
+- [x] Add explicit width/height attributes to all <img>
+- [x] Wrap page content in <main> landmark
+- [x] Add distinguishing aria-label to Gratitude Systems link
+- [x] Verify mobile menu at 375px — all behaviors working
+- [x] Verify desktop rendering unchanged at 1440px
 
 ## Remaining
 
@@ -35,7 +47,5 @@
 - [ ] Decommission Google Sites
 
 ### Enhancements 🟢 Nice
-- [ ] Add subtle hover microinteractions
-- [ ] Performance optimization (WebP images, preload critical assets)
 - [ ] Add 404.html page
 - [ ] Contact form integration (Formspree or similar)
