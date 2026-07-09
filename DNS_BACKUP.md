@@ -56,11 +56,28 @@ Registrar/DNS: Squarespace (NS delegated to Google Cloud DNS).
 | NS    | @    | ns-cloud-e4.googledomains.com      |
 | SOA   | @    | (managed by Google Cloud DNS)      |
 
+## Current records (after cutover 2026-07-09)
+
+| Type  | Host | Value                    | Purpose                     |
+|-------|------|--------------------------|-----------------------------|
+| A     | @    | 185.199.108.153          | GitHub Pages IPv4           |
+| A     | @    | 185.199.109.153          | GitHub Pages IPv4           |
+| A     | @    | 185.199.110.153          | GitHub Pages IPv4           |
+| A     | @    | 185.199.111.153          | GitHub Pages IPv4           |
+| AAAA  | @    | 2606:50c0:8000::153      | GitHub Pages IPv6           |
+| AAAA  | @    | 2606:50c0:8001::153      | GitHub Pages IPv6           |
+| AAAA  | @    | 2606:50c0:8002::153      | GitHub Pages IPv6           |
+| AAAA  | @    | 2606:50c0:8003::153      | GitHub Pages IPv6           |
+| CNAME | www  | akalutafesse.github.io   | GitHub Pages www routing    |
+
+Email/verification/infrastructure records unchanged from pre-cutover.
+
 ## Rollback instructions
 
 To revert to Google Sites, restore the 5 web-routing records:
 1. Delete the 4 GitHub Pages A records (185.199.108-111.153)
-2. Delete the CNAME www → akalutafesse.github.io
-3. Re-add: A @ → 216.239.32.21, 216.239.34.21, 216.239.36.21, 216.239.38.21
-4. Re-add: CNAME www → ghs.googlehosted.com
-5. Wait for propagation (up to 4 hours with 14400s TTL on A records)
+2. Delete the 4 GitHub Pages AAAA records (2606:50c0:800x::153)
+3. Delete the CNAME www → akalutafesse.github.io
+4. Re-add: A @ → 216.239.32.21, 216.239.34.21, 216.239.36.21, 216.239.38.21
+5. Re-add: CNAME www → ghs.googlehosted.com
+6. Wait for propagation (up to 4 hours with 14400s TTL on A records)

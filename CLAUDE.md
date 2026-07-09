@@ -4,9 +4,8 @@
 Static marketing site for North Point AI (northpoint-ai.com). Single-page, no build step.
 
 ## DO NOT TOUCH
-- Live Google Sites at northpoint-ai.com — stays up until explicit cutover instruction
-- Squarespace DNS records — do not modify until cutover approval
 - Design, copy, layout, colors, or section order — approved and final (v4)
+- Email DNS records (MX, SPF TXT, google-site-verification TXT) in Squarespace
 
 ## Stack
 Static HTML/CSS/JS. No framework, no build step, no dependencies.
@@ -22,8 +21,8 @@ robots.txt, sitemap.xml — SEO
 Note: CSS and JS are inlined in index.html (not external files) to eliminate render-blocking resources.
 
 ## Deploy
-- Staging: GitHub Pages (auto-deploy on push to main)
-- Production: GitHub Pages with custom domain www.northpoint-ai.com (pending DNS cutover)
+- Production: GitHub Pages with custom domain www.northpoint-ai.com (live)
+- Auto-deploy on push to main
 
 ## Brand colors
 - Navy: #0d1544 (primary)
@@ -44,13 +43,11 @@ Note: CSS and JS are inlined in index.html (not external files) to eliminate ren
 8. Push after every commit
 9. Images in WebP format with explicit width/height attributes
 
-## DNS cutover records (prepared, NOT applied)
-When approved, add in Squarespace DNS:
-- A record: @ → 185.199.108.153
-- A record: @ → 185.199.109.153
-- A record: @ → 185.199.110.153
-- A record: @ → 185.199.111.153
+## DNS (live — cutover completed 2026-07-09)
+- A records: @ → 185.199.108–111.153 (GitHub Pages)
 - CNAME: www → akalutafesse.github.io
+- Email records (MX/SPF/TXT) unchanged — managed in Squarespace
+- Rollback instructions in DNS_BACKUP.md
 
 ## New session checklist
 1. Read this file

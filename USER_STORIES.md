@@ -39,12 +39,18 @@
 - [ ] Add Google Analytics / Plausible analytics
 - [ ] Submit sitemap to Google Search Console
 
-### DNS Cutover 🔴 Must (blocked on approval)
-- [ ] Add CNAME file to repo
-- [ ] Apply DNS records in Squarespace
-- [ ] Enable HTTPS enforcement in GitHub Pages
-- [ ] Verify propagation
-- [ ] Decommission Google Sites
+### Session 3 — DNS Cutover (2026-07-09)
+- [x] Add CNAME file to repo
+- [x] Backup all DNS records (DNS_BACKUP.md)
+- [x] Apply DNS records in Squarespace (user-approved)
+- [x] Verify DNS propagation (A records + CNAME resolving)
+- [x] Verify HTTP site loads, apex redirects to www
+- [x] Verify email records (MX/SPF/TXT) untouched
+- [x] Add AAAA records for apex (required for cert provisioning)
+- [x] TLS certificate issued (Let's Encrypt, expires 2026-10-07)
+- [x] Enable HTTPS enforcement in GitHub Pages
+- [x] Verify HTTPS on apex and www, all images 200
+- [ ] Decommission Google Sites (Session 4)
 
 ### Enhancements 🟢 Nice
 - [ ] Add 404.html page
