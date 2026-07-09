@@ -21,8 +21,9 @@ robots.txt, sitemap.xml — SEO
 Note: CSS and JS are inlined in index.html (not external files) to eliminate render-blocking resources.
 
 ## Deploy
-- Production: GitHub Pages with custom domain www.northpoint-ai.com (live)
+- Production: https://northpoint-ai.com (GitHub Pages, apex canonical, www redirects to apex)
 - Auto-deploy on push to main
+- TLS: Let's Encrypt, HTTPS enforced, cert expires 2026-10-07
 
 ## Brand colors
 - Navy: #0d1544 (primary)
@@ -44,7 +45,8 @@ Note: CSS and JS are inlined in index.html (not external files) to eliminate ren
 9. Images in WebP format with explicit width/height attributes
 
 ## DNS (live — cutover completed 2026-07-09)
-- A records: @ → 185.199.108–111.153 (GitHub Pages)
+- A records: @ → 185.199.108–111.153 (GitHub Pages IPv4)
+- AAAA records: @ → 2606:50c0:800{0-3}::153 (GitHub Pages IPv6)
 - CNAME: www → akalutafesse.github.io
 - Email records (MX/SPF/TXT) unchanged — managed in Squarespace
 - Rollback instructions in DNS_BACKUP.md
@@ -52,5 +54,5 @@ Note: CSS and JS are inlined in index.html (not external files) to eliminate ren
 ## New session checklist
 1. Read this file
 2. Check git status and recent commits
-3. Confirm staging URL loads with zero errors
+3. Confirm https://northpoint-ai.com loads with zero errors
 4. Ask what we're working on today

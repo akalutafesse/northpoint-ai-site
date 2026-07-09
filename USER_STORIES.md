@@ -32,14 +32,7 @@
 - [x] Verify mobile menu at 375px — all behaviors working
 - [x] Verify desktop rendering unchanged at 1440px
 
-## Remaining
-
-### SEO & Analytics 🟡 Should
-- [ ] Add structured data (Organization, WebSite JSON-LD)
-- [ ] Add Google Analytics / Plausible analytics
-- [ ] Submit sitemap to Google Search Console
-
-### Session 3 — DNS Cutover (2026-07-09)
+### Session 3–4 — DNS Cutover & Production Launch (2026-07-09)
 - [x] Add CNAME file to repo
 - [x] Backup all DNS records (DNS_BACKUP.md)
 - [x] Apply DNS records in Squarespace (user-approved)
@@ -50,8 +43,18 @@
 - [x] TLS certificate issued (Let's Encrypt, expires 2026-10-07)
 - [x] Enable HTTPS enforcement in GitHub Pages
 - [x] Verify HTTPS on apex and www, all images 200
-- [ ] Decommission Google Sites (Session 4)
+- [x] Update canonical/og/sitemap URLs to apex domain
+- [x] Remove Google Sites custom domain mapping (site archived)
+- [x] Post-launch audit: links, mobile menu, cert, mixed content, OG image
+
+## Backlog
+
+### SEO & Analytics 🟡 Should
+- [ ] Add structured data (Organization, WebSite JSON-LD)
+- [ ] Add Google Analytics / Plausible analytics
+- [ ] Submit sitemap to Google Search Console
 
 ### Enhancements 🟢 Nice
 - [ ] Add 404.html page
 - [ ] Contact form integration (Formspree or similar)
+- [ ] Amharic language version

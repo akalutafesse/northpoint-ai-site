@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.0] — 2026-07-09
+## [1.2.0] — 2026-07-09 (Production launch)
 
 ### Changed
 - DNS cutover: northpoint-ai.com now points to GitHub Pages (was Google Sites)
@@ -9,7 +9,9 @@
 - CNAME: www → akalutafesse.github.io, replacing ghs.googlehosted.com
 - CNAME file set to apex domain (northpoint-ai.com) — www redirects to apex
 - TLS certificate issued (Let's Encrypt, expires 2026-10-07), HTTPS enforced
+- Canonical URL, og:url, og:image, twitter:image, sitemap, robots.txt updated to apex domain
 - Email/MX/TXT/SPF records preserved — no impact to info@northpoint-ai.com
+- Google Sites custom domain mapping removed (site archived, domain claim released)
 
 ### Added
 - DNS_BACKUP.md with full pre-cutover record inventory and rollback instructions
