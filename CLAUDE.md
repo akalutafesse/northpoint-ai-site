@@ -4,7 +4,7 @@
 Static marketing site for North Point AI (northpoint-ai.com). Single-page, no build step.
 
 ## DO NOT TOUCH
-- Design, copy, layout, colors, or section order — approved and final (v4)
+- Design, copy, layout, colors, or section order — approved and final (v8)
 - Email DNS records (MX, SPF TXT, google-site-verification TXT) in Squarespace
 
 ## Stack
@@ -26,15 +26,18 @@ Note: CSS and JS are inlined in index.html (not external files) to eliminate ren
 - TLS: Let's Encrypt, HTTPS enforced, cert expires 2026-10-07
 
 ## Brand colors
-- Navy: #0d1544 (primary)
+- Navy: #0d1544 (primary, hero bg)
 - Navy soft: #28347c (hover)
 - Ink: #10142b (text)
 - Ink-2: #5c6072 (secondary text)
 - Paper: #ffffff (background)
 - Paper-2: #f5f6f9 (alt sections)
+- Teal: #3ec6c6 (accent)
+- Violet: #7c5cfc (accent)
+- Gold: #c8960c (featured/Yerase Tena)
 
 ## Rules
-1. Pixel-faithful to approved v4 prototype — no design changes without approval (mobile menu is the one approved addition)
+1. Pixel-faithful to approved v8 prototype — no design changes without approval
 2. All images self-hosted under assets/img/ — no external hotlinks
 3. No external dependencies — no CDN, no Google Fonts, no analytics scripts (yet)
 4. System font stack only — no custom font loading

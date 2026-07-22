@@ -47,6 +47,20 @@
 - [x] Remove Google Sites custom domain mapping (site archived)
 - [x] Post-launch audit: links, mobile menu, cert, mixed content, OG image
 
+### Session 5 — v8 Redesign (2026-07-22)
+- [x] Create redesign-v8 branch
+- [x] Rebuild index.html to match v8 prototype
+- [x] Extract images to WebP (logo-full-white.webp new, logo-full-navy.webp updated)
+- [x] Dark gradient hero with animated compass mark + north-star glow
+- [x] SuqHub added to portfolio (4 live cards)
+- [x] Coming-soon pipeline: Yerase Tena (featured), Fetan Delivery, ZedePay, X Digital Logistics
+- [x] Partnership rebuilt: "7+ years" hero, timeline, expertise chips, trust strip
+- [x] Count-up + staggered-reveal animations (prefers-reduced-motion respected)
+- [x] Frosted-glass nav with dark→solid scroll transition
+- [x] Deploy preview to northpoint-preview repo, verify all assets/links
+- [x] Approval gate passed, merged to main
+- [x] Production verified: HTTPS 200, all images 200, zero console errors
+
 ## Backlog
 
 ### SEO & Analytics 🟡 Should

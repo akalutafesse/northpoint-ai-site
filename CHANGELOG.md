@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.3.0] — 2026-07-22 (v8 redesign)
+
+### Changed
+- Full site redesign to v8: dark gradient hero with animated compass mark + north-star glow
+- Only two dark sections (hero + AI for Good), rest light with teal/violet/gold accents
+- Partnership section rebuilt: animated "7+ years" hero, timeline, expertise chips, trust strip (U.S. Government Agencies · AT&T · Verizon · NVIDIA)
+- Leadership reduced to headline + one sentence (no schools)
+- Footer/contact: "Addis Ababa, Ethiopia" (no "Bole")
+- Count-up + staggered-reveal scroll animations (IntersectionObserver)
+- Updated logo-full-navy.webp (760×143)
+
+### Added
+- SuqHub added to portfolio (4 live product cards total)
+- "Coming soon" pipeline: Yerase Tena (featured, gold), Fetan Delivery, ZedePay, X Digital Logistics
+- logo-full-white.webp (760×143) for dark hero/nav
+- Frosted-glass nav with dark→solid transition on scroll
+
+### Preserved
+- All meta tags, favicons, robots.txt, sitemap.xml, CNAME
+- GitHub Actions deploy workflow
+- HTTPS/TLS, apex canonical, www→apex redirect
+
 ## [1.2.0] — 2026-07-09 (Production launch)
 
 ### Changed
