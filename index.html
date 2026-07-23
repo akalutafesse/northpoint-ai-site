@@ -172,7 +172,12 @@ h3{font-size:21px;letter-spacing:-.015em;font-weight:600}
 /* Portfolio */
 .port{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:72px}
 @media(max-width:880px){.port{grid-template-columns:1fr}}
-.port-card{position:relative;border-radius:var(--radius);padding:44px 40px;border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;gap:12px;transition:transform .35s var(--ease),box-shadow .35s var(--ease);text-decoration:none;color:var(--ink);overflow:hidden}
+.port-card{position:relative;border-radius:var(--radius);padding:0;border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);text-decoration:none;color:var(--ink);overflow:hidden}
+.port-shot{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#eef1fb}
+.port-shot svg{width:100%;height:auto;display:block;transition:transform .6s var(--ease)}
+.port-card:hover .port-shot svg{transform:scale(1.035)}
+.port-body{padding:32px 34px 36px;display:flex;flex-direction:column;gap:12px;flex:1}
+@media(prefers-reduced-motion:reduce){.port-shot svg{transition:none}}
 .port-card::after{content:"";position:absolute;inset:0;background:radial-gradient(500px 200px at 80% 0%,rgba(126,145,255,.08),transparent 70%);opacity:0;transition:opacity .4s}
 .port-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(13,21,68,.16)}
 .port-card:hover::after{opacity:1}
@@ -402,10 +407,84 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offse
   <div class="wrap">
     <div class="reveal"><span class="eyebrow">Delivered, not promised</span><h2>Systems already working<br>in the field.</h2></div>
     <div class="port stagger">
-      <a class="port-card reveal" href="https://fuelsight-ai.com" target="_blank" rel="noopener"><span class="port-tag t-gold">Fuel intelligence</span><h3>FuelSightAI</h3><p>Real-time fuel intelligence for Africa's most demanding operations. Its first analysis uncovered millions in fuel losses that existing systems missed — 25+ detection patterns, built in Ethiopia.</p><span class="go">Visit fuelsight-ai.com →</span></a>
-      <a class="port-card reveal" href="https://pier-360.com" target="_blank" rel="noopener"><span class="port-tag t-blue">Business automation</span><h3>Pier 360 AI</h3><p>AI-powered bots and Mini Apps on Telegram for Ethiopian businesses — from structured flows to full AI platforms, live in seven days, answering customers around the clock.</p><span class="go">Visit pier-360.com →</span></a>
-      <a class="port-card reveal" href="https://t.me/suqhubbot" target="_blank" rel="noopener"><span class="port-tag t-teal">Commerce enabler</span><h3>SuqHub</h3><p>Shopify, reimagined for Telegram. SuqHub lets any merchant spin up their own digital storefront — products, orders, and payments — entirely inside the app their customers already use.</p><span class="amh">የራስዎ ዲጂታል ሱቅ፣ በቴሌግራም ውስጥ።</span><span class="go">Open SuqHub on Telegram →</span></a>
-      <a class="port-card reveal" href="https://www.seller.fetanmarket.com" target="_blank" rel="noopener"><span class="port-tag t-violet">Digital commerce</span><h3>Fetan Market</h3><p>Turning informal retail into structured, scalable digital commerce — organized storefronts across digital channels, improving product visibility, discovery, and customer access nationwide.</p><span class="go">Visit seller.fetanmarket.com →</span></a>
+      <a class="port-card reveal" href="https://fuelsight-ai.com" target="_blank" rel="noopener">
+        <div class="port-shot"><svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Preview of the FuelSightAI website"><rect width="480" height="300" fill="#0a1020"/><rect width="480" height="28" fill="#141c33"/><circle cx="16" cy="14" r="3.2" fill="#2c3category"/><circle cx="28" cy="14" r="3.2" fill="#2c3category"/><circle cx="40" cy="14" r="3.2" fill="#2c3category"/><rect x="58" y="7" width="200" height="14" rx="7" fill="#1e2743"/><text x="68" y="17.5" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8.5" fill="#8b96b8">fuelsight-ai.com</text>
+<text x="30" y="76" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="-.5">Every litre.</text>
+<text x="30" y="102" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="20" font-weight="700" fill="#e05c4b" letter-spacing="-.5">Accounted for.</text>
+<g font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="9">
+<rect x="30" y="126" width="420" height="30" rx="7" fill="#131b30"/><rect x="30" y="126" width="3" height="30" rx="1.5" fill="#e05c4b"/>
+<text x="46" y="145" fill="#dfe5f5" font-weight="600">LC-019 · 60 L</text><text x="196" y="145" fill="#9aa3c0">GPS: 12 km from depot</text>
+<rect x="372" y="134" width="66" height="14" rx="7" fill="rgba(224,92,75,.16)"/><text x="382" y="144" fill="#e8776a" font-size="7.6" font-weight="700">CRITICAL</text>
+<rect x="30" y="162" width="420" height="30" rx="7" fill="#131b30"/><rect x="30" y="162" width="3" height="30" rx="1.5" fill="#e0a83a"/>
+<text x="46" y="181" fill="#dfe5f5" font-weight="600">HT-007 · 120 L</text><text x="196" y="181" fill="#9aa3c0">Odometer rolled back 1,100 km</text>
+<rect x="378" y="170" width="60" height="14" rx="7" fill="rgba(224,168,58,.16)"/><text x="388" y="180" fill="#e0b45c" font-size="7.6" font-weight="700">WARNING</text>
+<rect x="30" y="198" width="420" height="30" rx="7" fill="#131b30"/><rect x="30" y="198" width="3" height="30" rx="1.5" fill="#e05c4b"/>
+<text x="46" y="217" fill="#dfe5f5" font-weight="600">PU-031 · 45 L</text><text x="196" y="217" fill="#9aa3c0">Receipt says 38 L, not 45</text>
+<rect x="372" y="206" width="66" height="14" rx="7" fill="rgba(224,92,75,.16)"/><text x="382" y="216" fill="#e8776a" font-size="7.6" font-weight="700">CRITICAL</text>
+</g>
+<g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<text x="30" y="258" font-size="17" font-weight="700" fill="#ffffff">25+</text><text x="30" y="272" font-size="8" fill="#8b96b8">detection patterns</text>
+<text x="130" y="258" font-size="17" font-weight="700" fill="#ffffff">&lt;5min</text><text x="130" y="272" font-size="8" fill="#8b96b8">to flag theft</text>
+<text x="240" y="258" font-size="17" font-weight="700" fill="#ffffff">0</text><text x="240" y="272" font-size="8" fill="#8b96b8">hardware needed</text>
+</g></svg></div>
+        <div class="port-body"><span class="port-tag t-gold">Fuel intelligence</span><h3>FuelSightAI</h3><p>Real-time fuel intelligence for Africa's most demanding operations. Its first analysis uncovered millions in fuel losses that existing systems missed — 25+ detection patterns, built in Ethiopia.</p><span class="go">Visit fuelsight-ai.com →</span></div>
+      </a>
+      <a class="port-card reveal" href="https://pier-360.com" target="_blank" rel="noopener">
+        <div class="port-shot"><svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Preview of the Pier 360 AI website"><rect width="480" height="300" fill="#ffffff"/><rect width="480" height="28" fill="#f4f6fc"/><circle cx="16" cy="14" r="3.2" fill="#d6dcee"/><circle cx="28" cy="14" r="3.2" fill="#d6dcee"/><circle cx="40" cy="14" r="3.2" fill="#d6dcee"/><rect x="58" y="7" width="200" height="14" rx="7" fill="#e9edf9"/><text x="68" y="17.5" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8.5" fill="#7c86a6">pier-360.com</text>
+<text x="30" y="72" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="700" fill="#0d1544" letter-spacing="-.5">Your business.</text>
+<text x="30" y="97" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="19" font-weight="700" fill="#7e91ff" letter-spacing="-.5">Intelligent. On Telegram.</text>
+<g font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="9">
+<rect x="30" y="120" width="190" height="30" rx="12" fill="#f0f2f9"/><text x="44" y="139" fill="#4a5170">"Are you open right now?"</text>
+<rect x="200" y="158" width="250" height="30" rx="12" fill="#0d1544"/><text x="214" y="177" fill="#ffffff">"Yes — open until 10pm. Shall I book?"</text>
+<text x="404" y="200" fill="#9aa3c0" font-size="7.5">replied in 4s</text>
+</g>
+<line x1="30" y1="220" x2="450" y2="220" stroke="#e7ebf7"/>
+<g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<text x="30" y="250" font-size="17" font-weight="700" fill="#0d1544">7 days</text><text x="30" y="264" font-size="8" fill="#7c86a6">to go live</text>
+<text x="130" y="250" font-size="17" font-weight="700" fill="#0d1544">24/7</text><text x="130" y="264" font-size="8" fill="#7c86a6">always answering</text>
+<text x="250" y="250" font-size="17" font-weight="700" fill="#0d1544">70%</text><text x="250" y="264" font-size="8" fill="#7c86a6">of urban Ethiopia on Telegram</text>
+</g></svg></div>
+        <div class="port-body"><span class="port-tag t-blue">Business automation</span><h3>Pier 360 AI</h3><p>AI-powered bots and Mini Apps on Telegram for Ethiopian businesses — from structured flows to full AI platforms, live in seven days, answering customers around the clock.</p><span class="go">Visit pier-360.com →</span></div>
+      </a>
+      <a class="port-card reveal" href="https://suq-hub.com" target="_blank" rel="noopener">
+        <div class="port-shot"><svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Preview of the SuqHub website"><rect width="480" height="300" fill="#ffffff"/><rect width="480" height="28" fill="#f3f8f7"/><circle cx="16" cy="14" r="3.2" fill="#cfe2df"/><circle cx="28" cy="14" r="3.2" fill="#cfe2df"/><circle cx="40" cy="14" r="3.2" fill="#cfe2df"/><rect x="58" y="7" width="200" height="14" rx="7" fill="#e4f1ef"/><text x="68" y="17.5" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8.5" fill="#4f7d77">suq-hub.com/habesha-glow</text>
+<circle cx="44" cy="58" r="15" fill="#1fa89c"/><text x="44" y="63" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="14" font-weight="700" fill="#fff">H</text>
+<text x="68" y="54" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#0d1544">Habesha Glow</text>
+<circle cx="151" cy="49.5" r="6" fill="#1fa89c"/><path d="M148 49.5l2.2 2.2 4-4.4" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<text x="68" y="68" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8.5" fill="#7c86a6">Verified merchant · #1014 · ★★★★★</text>
+<g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<rect x="30" y="92" width="100" height="92" rx="10" fill="#f2f7f6" stroke="#e2eceb"/><rect x="40" y="102" width="80" height="52" rx="6" fill="#d9e9e6"/><text x="40" y="170" font-size="8" fill="#4a5170">Herbal tea</text><text x="40" y="180" font-size="9" font-weight="700" fill="#1fa89c">350 ብር</text>
+<rect x="140" y="92" width="100" height="92" rx="10" fill="#f2f7f6" stroke="#e2eceb"/><rect x="150" y="102" width="80" height="52" rx="6" fill="#dfe9e4"/><text x="150" y="170" font-size="8" fill="#4a5170">Vitamin C</text><text x="150" y="180" font-size="9" font-weight="700" fill="#1fa89c">680 ብር</text>
+<rect x="250" y="92" width="100" height="92" rx="10" fill="#f2f7f6" stroke="#e2eceb"/><rect x="260" y="102" width="80" height="52" rx="6" fill="#e3ebe2"/><text x="260" y="170" font-size="8" fill="#4a5170">Flaxseed</text><text x="260" y="180" font-size="9" font-weight="700" fill="#1fa89c">420 ብር</text>
+<rect x="360" y="92" width="90" height="92" rx="10" fill="#f2f7f6" stroke="#e2eceb"/><rect x="370" y="102" width="70" height="52" rx="6" fill="#dde9e7"/><text x="370" y="170" font-size="8" fill="#4a5170">Moringa</text><text x="370" y="180" font-size="9" font-weight="700" fill="#1fa89c">750 ብር</text>
+</g>
+<rect x="30" y="200" width="420" height="34" rx="9" fill="#f6faf9" stroke="#e2eceb"/>
+<circle cx="50" cy="217" r="7" fill="#1fa89c" fill-opacity=".15"/><text x="50" y="220" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8">✉</text>
+<text x="66" y="214" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8.5" font-weight="600" fill="#0d1544">New enquiry</text>
+<text x="66" y="226" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8" fill="#7c86a6">Herbal immune tea · 350 ብር</text>
+<rect x="398" y="209" width="40" height="16" rx="8" fill="#1fa89c"/><text x="418" y="220" text-anchor="middle" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="7.6" font-weight="700" fill="#fff">Reply</text>
+<text x="30" y="262" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="10" font-weight="600" fill="#0d1544">Your own link. Your own store. Live in minutes.</text>
+</svg></div>
+        <div class="port-body"><span class="port-tag t-teal">Commerce enabler</span><h3>SuqHub</h3><p>Turns Telegram selling into a real store — your own storefront and clean link, every buyer in one inbox, and a marketplace of verified Ethiopian merchants. Live in minutes.</p><span class="amh">የራስዎ ዲጂታል ሱቅ፣ በቴሌግራም ውስጥ።</span><span class="go">Visit suq-hub.com →</span></div>
+      </a>
+      <a class="port-card reveal" href="https://www.seller.fetanmarket.com" target="_blank" rel="noopener">
+        <div class="port-shot"><svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Preview of the Fetan Market seller portal">
+<rect width="480" height="300" fill="#ffffff"/><rect width="480" height="28" fill="#f6f4fc"/>
+<circle cx="16" cy="14" r="3.2" fill="#ddd6f0"/><circle cx="28" cy="14" r="3.2" fill="#ddd6f0"/><circle cx="40" cy="14" r="3.2" fill="#ddd6f0"/>
+<rect x="58" y="7" width="200" height="14" rx="7" fill="#ece7f8"/><text x="68" y="17.5" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="8.5" fill="#6f649a">seller.fetanmarket.com</text>
+<text x="30" y="70" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" font-weight="700" fill="#0d1544" letter-spacing="-.4">Informal retail,</text>
+<text x="30" y="94" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="18" font-weight="700" fill="#7b61c9" letter-spacing="-.4">organized.</text>
+<g font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<rect x="30" y="116" width="133" height="62" rx="10" fill="#faf9fe" stroke="#ece7f8"/><text x="46" y="142" font-size="17" font-weight="700" fill="#7b61c9">Storefront</text><text x="46" y="160" font-size="8" fill="#7c86a6">structured &amp; searchable</text>
+<rect x="173" y="116" width="133" height="62" rx="10" fill="#faf9fe" stroke="#ece7f8"/><text x="189" y="142" font-size="17" font-weight="700" fill="#7b61c9">Catalog</text><text x="189" y="160" font-size="8" fill="#7c86a6">photos, prices, pages</text>
+<rect x="316" y="116" width="134" height="62" rx="10" fill="#faf9fe" stroke="#ece7f8"/><text x="332" y="142" font-size="17" font-weight="700" fill="#7b61c9">Reach</text><text x="332" y="160" font-size="8" fill="#7c86a6">nationwide discovery</text>
+<rect x="30" y="192" width="420" height="14" rx="7" fill="#f2eefb"/><rect x="30" y="192" width="300" height="14" rx="7" fill="#7b61c9" fill-opacity=".55"/>
+<text x="30" y="222" font-size="8.5" fill="#7c86a6">Product visibility</text>
+<rect x="30" y="232" width="420" height="14" rx="7" fill="#f2eefb"/><rect x="30" y="232" width="374" height="14" rx="7" fill="#7b61c9"/>
+<text x="30" y="262" font-size="8.5" fill="#7c86a6">Customer access</text>
+</g></svg></div>
+        <div class="port-body"><span class="port-tag t-violet">Digital commerce</span><h3>Fetan Market</h3><p>Turning informal retail into structured, scalable digital commerce — organized storefronts across digital channels, improving product visibility, discovery, and customer access nationwide.</p><span class="go">Visit seller.fetanmarket.com →</span></div>
+      </a>
     </div>
 
     <div class="soon-head reveal"><h3>On the horizon</h3><span>What we're building next.</span></div>
