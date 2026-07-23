@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.1] — 2026-07-23 (v9 portfolio SVG previews)
+
+### Changed
+- Portfolio cards now lead with inline SVG site-preview illustrations (FuelSightAI, Pier 360, SuqHub, Fetan Market)
+- Card layout restructured: .port-shot (SVG) + .port-body (text) with hover zoom on SVG
+- SuqHub card now links to https://suq-hub.com (was t.me/suqhubbot)
+- SuqHub copy updated to reflect storefront + marketplace positioning
+
+### Preserved
+- All meta tags, favicons, robots.txt, CNAME, GitHub Actions workflow
+- HTTPS/TLS, apex canonical, www→apex redirect
+
 ## [1.3.0] — 2026-07-22 (v8 redesign)
 
 ### Changed

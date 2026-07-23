@@ -61,6 +61,15 @@
 - [x] Approval gate passed, merged to main
 - [x] Production verified: HTTPS 200, all images 200, zero console errors
 
+### Session 6 — v9 Portfolio SVG Previews (2026-07-23)
+- [x] Diagnose production state (v8 confirmed live, not stale)
+- [x] Add inline SVG site-preview illustrations to all 4 portfolio cards
+- [x] Restructure portfolio cards with .port-shot + .port-body layout
+- [x] SuqHub link updated to suq-hub.com (was t.me/suqhubbot)
+- [x] SuqHub copy refreshed for storefront + marketplace positioning
+- [x] Sitemap lastmod updated to 2026-07-23
+- [x] Production verified: all 8 grep checks pass, images 200, HTTPS valid
+
 ## Backlog
 
 ### SEO & Analytics 🟡 Should
